@@ -1,0 +1,27 @@
+﻿@model ApplicationFormular.Models.ParticipantDetails
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="widt=device-width" />
+        <title>Dziękujemy</title>
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    </head>
+    <body class="text-center">
+        <div>
+            <h1>Dziękujemy za zgłoszenie, @Model.FullName!</h1>
+            @if (Model.WillParticipate == true)
+            {
+                @: Do zobaczenia @Model.DateChoice. Rozpoczynamy o godzinie 11:00 we Wrocławiu w Hali Stulecia.
+            }
+
+        </div>
+        <div>Kliknij <a asp-action="ParticipantList">tutaj</a> aby zobaczyć listę uczestników.</div>
+         <div>Kliknij <a asp-action="ApplicationForm">tutaj</a> aby wpisać kolejną osobę.</div>
+
+    </body>
+</html>

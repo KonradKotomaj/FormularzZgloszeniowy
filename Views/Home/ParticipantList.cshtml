@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ApplicationFormular.Models.ParticipantDetails>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name=" viewport" content=" width=device-width" />
+        <title>Lista uczestników</title>
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    </head>
+    <body>
+        <div class="text-center p-2">
+        <h2>Lista uczestników zapisanych na targi pracy:</h2>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr><th>Imię i Nazwisko</th><th>Email</th><th>Telefon</th><th>Data</th></tr>
+            </thead>
+            <tbody>
+                @foreach (ApplicationFormular.Models.ParticipantDetails r in Model)
+                {
+                <tr>
+                    <td>@r.FullName</td>
+                    <td>@r.Email</td>
+                    <td>@r.Phone</td>
+                    <td>@r.DateChoice</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        Kliknij <a asp-action="ApplicationForm">tutaj</a> aby wpisać kolejną osobę.
+        </div>
+        </body>
+</html>

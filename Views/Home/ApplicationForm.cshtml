@@ -1,0 +1,53 @@
+﻿@model ApplicationFormular.Models.ParticipantDetails
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <title>Formularz rejestracji</title>
+
+
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <h4 class="bg-primary text-white text-center m-2 p-2">Zapisy na targi pracy</h4>
+        <form asp-action="ApplicationForm" method="post" class="m-2">
+            <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                <label asp-for="FullName">Twoje Imię i Nazwisko:</label>
+                <input asp-for="FullName" class="form-control" />
+           </div>
+           <div class="form-group">
+                <label asp-for="Email">Twój adres email:</label>
+                <input asp-for="Email" class="form-control" />
+           </div>
+           <div class="form-group">
+                <label asp-for="Phone">Twój telefon:</label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Którą wybierasz datę?</label>
+                <select asp-for="DateChoice" class="form-control">
+                    <option value="">Wybierz dzień:</option>
+                    <option value="30.05">30.05</option>
+                    <option value="06.06">06.06</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Czy potwierdzasz uczestnictwo?</label>
+                <select asp-for="WillParticipate" class="form-control">>
+                    <option value="">Wybierz odpowiedź</option>
+                    <option value="true">Potwierdzam</option>
+                    
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Wyślij zgłoszenie</button>
+        </form>
+    </body>
+</html>
